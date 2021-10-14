@@ -17,6 +17,7 @@
     <!-- <link href="../assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" /> -->
 
     <!-- Styles -->
+    <link href="{{ asset('admin/css/custom.css') }}" rel="stylesheet">
     <link href="{{ asset('admin/css/material-dashboard.css') }}" rel="stylesheet">
 
 </head>
@@ -42,7 +43,15 @@
     <script src="{{ asset('admin/js/popper.min.js') }}" defer></script>
     <script src="{{ asset('admin/js/bootstrap-material-design.min.js') }}" defer></script>
     <script src="{{ asset('admin/js/perfect-scrollbar.jquery.min.js') }}" defer></script>
-    
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    @if(session('status'))
+        <script>
+            swal("{{session('status')}}");
+        </script>
+
+    @endif
+
     @yield('scripts')
 </body>
 </html>

@@ -7,7 +7,7 @@
       <div class="logo"><a href="#" class="simple-text logo-normal">
           EME
         </a></div>
-      <div class="sidebar-wrapper">
+      <div class="sidebar-wrapper {{ Request::is('dashboard') ? 'active':'' }}"">
         <ul class="nav">
           <li class="nav-item active  ">
             <a class="nav-link" href="./dashboard.html">
@@ -15,13 +15,13 @@
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item {{ Request::is('categories') ? 'active':'' }}">
             <a class="nav-link" href="{{ url('categories') }}">
               <i class="material-icons">person</i>
               <p>Categories</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item {{ Request::is('add-category') ? 'active':'' }}"">
             <a class="nav-link" href="{{ url('add-category') }}">
               <i class="material-icons">person</i>
               <p>Add Category</p>

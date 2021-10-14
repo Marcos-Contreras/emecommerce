@@ -3,7 +3,7 @@
 @section('content')
 <div class="card">
     <div class="card-body">
-        <h1>EME - Dashboard</h1>
+        <h1>Category Page</h1>
     </div>
 </div>
 @endsection
