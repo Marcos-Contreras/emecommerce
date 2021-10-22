@@ -33,28 +33,35 @@
                   </p> 
                   <hr>
                   @if($products->qty > 0)
-                      <label class="badge bg-succes">In stock</label>
+                      <label class="badge bg-success">In stock</label>
                   @else 
                       <label class="badge bg-danger">Out of stock</label>
                   @endif
                   <div class="row mt-2">
-                      <div class="col-md-2">
+                      <div class="col-md-3"> 
                           <label for="Quantity">Quantity</label>
-                          <div class="input-group text-center mb-3"> style="width:130px;"
-                              <button clas="input-group-text decrement-btn">-</span>
+                          <div class="input-group text-center mb-3" style="width:130px;">
+                              <button class="input-group-text decrement-btn">-</button>
                               <input type="text" name="quantity" class="form-control qty-input text-center" value="1" >
-                              <button clas="input-group-text increment-btn">+</span>
+                              <button class="input-group-text increment-btn">+</button>
                           </div>
                       </div>
-                     <div class="col-md-10">
+                     <div class="col-md-9">
                           </br> 
-                          <button type="button" class="btn btn-succes me-3 float-start">Add to Wishlist <i class="fa fa-heart"></i></button>
+                          <button type="button" class="btn btn-success me-3 float-start">Add to Wishlist <i class="fa fa-heart"></i></button>
                           <button type="button" class="btn btn-primary me-3 float-start">Add to Cart <i class="fa fa-shopping-cart"></i></button>    
                      </div>
                   </div>
 
                 </div>
             </div>
+            <div class="col-md-12">
+                <hr>
+                <h3>Description</h3>
+            <p class="mt-3">
+                {!! $products->description !!}
+            </p>
+
         </div>
 
     </div>
