@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\FrontEnd\FrontendController;
+use App\Http\Controllers\FrontEnd\CartController;
+use App\Http\Controllers\FrontEnd\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,12 +32,15 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::post('add-to-cart', [CartController::class, 'addProduct']);
+Route::post('delete-cart-item', [CartController::class, 'deleteproduct']);
+Route::post('update-cart', [CartController::class, 'updatecart']);
 
-Route::middleware(['auth' => 'isAdmin'])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('admin.index');
-    });
+Route::middleware(['auth'])->group(function () {
+    Route::get('cart', [CartController::class, 'viewcart']);
+    Route::get('checkout', [CheckoutController::class, 'index']);
 });
+
 
 Route::middleware(['auth' => 'isAdmin'])->group(function () {
     Route::get('/dashboard', 'Admin\FrontendController@index');
