@@ -1,5 +1,33 @@
 $(document).ready(function () {
 
+    loadcart();
+    loadwishlist();
+
+    function loadcart()
+    {
+        $.ajax({
+            method:"GET",
+            url:"load-cart-data",
+            success: function (response) {
+                $('.cart-count').html('');
+                $('.cart-count').html(response.count);
+                console.log(response.count)
+            }
+        });
+    }
+
+    function loadwishlist()
+    {
+        $.ajax({
+            method:"GET",
+            url:"load-wishlist-count",
+            success:function (response){
+                $('.wishlist-count').html('');
+                $('.wishlist-count').html(response.count);
+            }
+        });
+    }
+
     $('.addToCartBtn').click(function (e) {
         e.preventDefault();
 
@@ -12,7 +40,6 @@ $(document).ready(function () {
             }
         });
 
-
         $.ajax({
             method: "POST",
             url: "../../add-to-cart",
@@ -22,6 +49,7 @@ $(document).ready(function () {
             },
             success: function (response) {
                 swal(response.status);
+                loadcart();
             }
         });
     });
@@ -64,6 +92,7 @@ $(document).ready(function () {
             },
             success: function (response) {
                 swal(response.status);
+                loadwishlist();
             }
         });
     });

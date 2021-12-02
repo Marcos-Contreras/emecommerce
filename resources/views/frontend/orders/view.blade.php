@@ -43,33 +43,34 @@
                                 <div class="border ">{{ $orders->pincode}}</div>
 
                             </div>
-                    <div class="col-md-6">
-                        <h4>Order Details</h4>
-                        <hr>
-                         <table class="table table-bordered">
-                             
-                                <thead>
-                                 <tr>
-                                    <th>Name</th>
-                                    <th>Quantity</th>
-                                    <th>Price</th>
-                                    <th>Image</th>
-                                </tr>
-                             </thead>
-                             <tbody>
-                                 @foreach ($orders->orderitems as $item)
-                                <tr>
-                                    <td>{{ $item->products->name}}</td>
-                                    <td>{{ $item->prod_qty}}</td>
-                                    <td>{{ $item->price}}</td>
-                                    <td>
-                                        <img src="{{ asset('assets/uploads/products/'.$item->products->image)  }}" with="50px" alt="Product Image">
-                                    </td>
-                                </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-                <h4 class="px2">Grand Total: <span class="float-end">{{ $orders->total_price }}</span> </h4>
+                            <div class="col-md-6">
+                                <h4>Order Details</h4>
+                                <hr>
+                                <table class="table table-bordered">
+                                    
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Quantity</th>
+                                            <th>Price</th>
+                                            <th>Image</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($orders->orderitems as $item)
+                                            <tr>
+                                                <td>{{ $item->products->name}}</td>
+                                                <td>{{ $item->prod_qty}}</td>
+                                                <td>{{ $item->price}}</td>
+                                                <td>
+                                                    <img src="{{ asset('assets/uploads/products/'.$item->products->image)  }}" with="50px" alt="Product Image">
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                                <h4 class="px2">Grand Total: <span class="float-end">{{ $orders->total_price }}</span> </h4>
+                                <h6 class="px2">Payment Mode: {{ $orders->payment_mode }} </h4>
                             </div>
                         </div>
                    

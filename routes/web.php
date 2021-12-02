@@ -35,6 +35,9 @@ Route::get('category/{cate_slug}/{prod_slug}', [FrontendController::class, 'prod
 
 Auth::routes();
 
+Route::get('load-cart-data', [CartController::class, 'cartcount']);
+Route::get('load-wishlist-count', [WishlistController::class, 'wishlistcount']);
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::post('add-to-cart', [CartController::class, 'addProduct']);
@@ -54,6 +57,9 @@ Route::middleware(['auth'])->group(function () {
 
    Route::get('wishlist',[WishlistController::class,'index']);
    
+
+   //Ruta para metodo de pago distinto de PayPal (no se utiliza)
+   Route::post('proceed-to-pay',[CheckoutController::class,'razorpaycheck']);
 });
 
 
