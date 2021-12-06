@@ -51,10 +51,10 @@
                         <div class="m-5 col-lg-3 col-sm-6 ">
                             <h4>Social media</h4>
                             <ul class="list-unstyled">
-                                <li><a href="https://www.facebook.com/cinestudiar1" >Facebook</a></li>
-                                <li><a href="https://www.instagram.com/cinestudiar/" >Instagram</a></li>
-                                <li><a href="https://www.facebook.com/cinestudiar1" >Twitter</a></li>
-                                <li><a href="https://twitter.com/Cinestudiar1" >YouTube</a></li>
+                                <li><a href="https://www.facebook.com/Eme-Store-102343155244290" >Facebook</a></li>
+                                <li><a href="https://www.instagram.com/janis.ropa/" >Instagram</a></li>
+                                <li><a href="https://www.facebook.com/Eme-Store-102343155244290" >Twitter</a></li>
+                                <li><a href="https://www.facebook.com/Eme-Store-102343155244290" >YouTube</a></li>
                             </ul>
                         </div>
                         <div class="m-5 col-lg-3 col-sm-6">

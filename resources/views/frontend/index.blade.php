@@ -39,7 +39,7 @@
                             <a href="{{ url('view-category/'.$tcategory->slug) }}">
                             <div class="card">
                                 <img src="{{asset('assets/uploads/category/'.$tcategory->image)}}" alt="Product Image">
-                                <div class="card-body">
+                                <div class="card-body text-dark">
                                     <h5>{{ $tcategory->name }}</h5>
                                     <p>
                                         {{ $tcategory->description }}
