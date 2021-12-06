@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -44,7 +45,32 @@
     @include ('layouts.inc.frontnavbar')
     <div class="content">
         @yield('content')
+        <div class="main-footer bg-dark">
+                <div class="container">
+                    <div class="row text-white justify-content-center">
+                        <div class="m-5 col-lg-3 col-sm-6 ">
+                            <h4>Social media</h4>
+                            <ul class="list-unstyled">
+                                <li><a href="https://www.facebook.com/cinestudiar1" >Facebook</a></li>
+                                <li><a href="https://www.instagram.com/cinestudiar/" >Instagram</a></li>
+                                <li><a href="https://www.facebook.com/cinestudiar1" >Twitter</a></li>
+                                <li><a href="https://twitter.com/Cinestudiar1" >YouTube</a></li>
+                            </ul>
+                        </div>
+                        <div class="m-5 col-lg-3 col-sm-6">
+                            <h4>Contact</h4>
+                            <ul className="list-unstyled">
+                                <li>Phone number: 449-406-74-57</li>
+                                <li>Email: emecommerce@gmail.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
     </div>
+
+    
     
     <!-- Scripts -->
     <script src="{{ asset('frontend/js/jquery-3.6.0.min.js') }}"></script>
@@ -62,5 +88,7 @@
     @endif
 
     @yield('scripts')
+
+    
 </body>
 </html>

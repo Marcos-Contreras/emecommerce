@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use APP\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\FrontEnd\FrontendController;
+use App\Http\Controllers\FrontEnd\RatingController;
 use App\Http\Controllers\FrontEnd\CartController;
 use App\Http\Controllers\FrontEnd\CheckoutController;
 use App\Http\Controllers\FrontEnd\UserController;
@@ -54,6 +55,10 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('my-orders',[UserController::class,'index']);
     Route::get('view-order',[UserController::class,'view']);
+
+    Route::post('add-rating', [RatingController::class, 'add']);
+    
+    Route::get('add review/(product_slug)/', [ReviewController::class, 'add']);
 
    Route::get('wishlist',[WishlistController::class,'index']);
    
